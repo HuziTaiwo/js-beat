@@ -11,24 +11,19 @@ addEventListener('load', () => {
             beats[i].currentTime = 0;
             beats[i].play();
             createBeats(i,e);
+            document.body.style.background  = colors[i];
         });
 
     });
 
     // create beats
     const createBeats = (i, e) => {
-        // const bubble  = document.createElement('div');
-        // visual.appendChild(bubble);
-        // bubble.style.backgroundColor = colors[i];
-        // bubble.style.animation = 'jump 1s ease';
-        // bubble.addEventListener('animationend', function() {
-        //     visual.removeChild(this);
-        // })
         const bubble = e.target.children[1].cloneNode();
         visual.appendChild(bubble);
         bubble.style.animation = 'jump 1s ease';
         bubble.addEventListener('animationend', function() {
             visual.removeChild(this);
+            document.body.style.background  = '';
         });
     }
 });
